@@ -41,7 +41,7 @@ require_once('../includes/pager.php');
 			'total_rows'=>$all_date_num, 
             'method'    =>'html', 
             'parameter' =>$strPage.'!',  
-            'now_page'  =>$_GET['page'], 
+            'now_page'  =>$page, 
             'list_rows' =>2,
 			);
 			$page = new Core_Lib_Page($params);

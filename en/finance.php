@@ -12,11 +12,16 @@ $fyear = 2012;
 if($fmon <10){
 $fmon = str_replace("0", "", $fmon);
 }
+if(isset($_GET["year"])){
 if($_GET["year"] != ""){
 	$fyear = $_GET["year"];
 }
+}
+
+if(isset($_GET["month"])){
 if($_GET["month"] != "" ){
 	$fmon = $_GET["month"]; 
+}
 }
 
 if($fmon<10){

@@ -33,7 +33,7 @@ require_once('./includes/pager.php');
 	<?php
         }
 		$thisB = null;
-		$myquery = nul;
+		$myquery = null;
     ?>
     </div> 
 </div>
@@ -51,10 +51,10 @@ require_once('./includes/pager.php');
 			'total_rows'=>$all_date_num, 
             'method'    =>'html', 
             'parameter' =>$strPage.'!',  
-            'now_page'  =>$_GET['page'], 
+            'now_page'  =>$page, 
             'list_rows' =>4,
 			);
-			$page = new Core_Lib_Page($params);
+			$navpage = new Core_Lib_Page($params);
 
 			$myquery = $db->query("SELECT news_id, image, dateline,intro_".$lang.",title_".$lang." as title FROM ".$ea->table('news')." ORDER BY orderby, dateline Desc LIMIT $offset, $perpage");
 				while($thisB = $db->fetch_array($myquery)) {
@@ -78,7 +78,7 @@ require_once('./includes/pager.php');
 	  ?>  
 </div>
 <div class="w970 page pb20 pt15 pr page"> 
-    <?php echo $page->show(2);?>
+    <?php echo $navpage->show(2);?>
     <a href="#" class="pa rzero"><img src="image/social_media_sina.png" class="png"/></a>
 </div>
 <!-- footer -->

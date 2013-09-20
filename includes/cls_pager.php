@@ -6,7 +6,7 @@ class page
 	var $curr_page = '';
 	var $mpurl = '';
 	
-  	function page_num($num, $perpage, $curr_page, $mpurl) 
+  	public static function page_num($num, $perpage, $curr_page, $mpurl) 
 	{
 		$multipage = '';
 		if($num > $perpage) 
@@ -69,7 +69,7 @@ class page
 class page_1 extends page
 {
 	//sql  curr_page当前分页数 $page_num 分页显示数据
-	function page_all_num($table,$where)
+	public static function page_all_num($table,$where)
 	{
 		global $db,$ea;
 		
@@ -86,7 +86,7 @@ class page_1 extends page
 	 *$table 表格  curr_page 当前分页数  page_num 每页显示数 page_url 分页页面  	$where url查询时候的参数
 	*/
 	
-	function page_array($param="*",$table,$where,$order,$curr_page,$page_num)
+	public static function page_array($param="*",$table,$where,$order,$curr_page,$page_num)
 	{
 		global $db,$ea;
 		

@@ -6,7 +6,7 @@
  * powered by Rick
  * http://www.emporioasia.com
  * ----------------------------------------------------------------------------
- * $Author: Calvin Shen  
+ * $Author: Rick  
  * $email:calvin@emporioasia.com
 */
 if (!defined('IN_SK'))
@@ -14,7 +14,7 @@ if (!defined('IN_SK'))
     die('Hacking attempt');
 }
 
-$a_right = get_right_byId($_SESSION['admin_id']);
+$a_right = get_right_byId(isset($_SESSION['admin_id']) ? $_SESSION['admin_id'] : "");
 
 
 ?>

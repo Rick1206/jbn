@@ -37,15 +37,18 @@ if(!empty($_SESSION['userName']) && !empty($_SESSION["userId"])){
 <form id="form1" name="form1" method="post" action="diary.php">
 	<div class="search_form">
     <span>查询相关日记</span>
-	<div class="dropdownlist" comment="year"><span class="title"><span class="show"><?php echo $_POST['year'] ?  $_POST['year'] : date("Y");?></span></span>
+	<div class="dropdownlist" comment="year"><span class="title"><span class="show">
+		<?php echo isset($_POST['year']) ?  $_POST['year'] : date("Y");?></span></span>
     <ul id="insertyear"></ul>
     <input type="hidden" id="year" name="year" value="<?php echo date("Y"); ?>" />
     </div><span>年</span>
-    <div class="dropdownlist" comment="month"><span class="title"><span class="show"><?php echo $_POST['month'] ?  $_POST['month'] : date("m");?></span></span>
+    <div class="dropdownlist" comment="month"><span class="title"><span class="show">
+    	<?php echo isset($_POST['month']) ?  $_POST['month'] : date("m");?></span></span>
     <ul id="insertmonth"></ul>
     <input type="hidden" id="month" name="month" value="<?php echo date("m"); ?>" />
     </div><span>月</span>
-    <div class="dropdownlist" comment="day"><span class="title"><span class="show"><?php echo $_POST['day'] ?  $_POST['day'] : date("d");?></span></span>
+    <div class="dropdownlist" comment="day"><span class="title"><span class="show">
+    	<?php echo isset($_POST['day']) ?  $_POST['day'] : date("d");?></span></span>
     <ul id="insertday"></ul>
     <input type="hidden" id="day" name="day" value="<?php echo date("d"); ?>"/>
     </div><span>日</span>

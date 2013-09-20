@@ -41,10 +41,10 @@ require_once('./includes/pager.php');
 			'total_rows'=>$all_date_num, 
             'method'    =>'html', 
             'parameter' =>$strPage.'!',  
-            'now_page'  =>$_GET['page'], 
+            'now_page'  =>$page, 
             'list_rows' =>2,
 			);
-			$page = new Core_Lib_Page($params);
+			$navpage = new Core_Lib_Page($params);
 		
 		
 		$myquery = $db->query("SELECT education_id, photo, dateline, intro_".$lang." as intro, title_".$lang." as title FROM ".$ea->table('education')." ORDER BY dateline Desc LIMIT $offset, $perpage");
@@ -73,7 +73,7 @@ require_once('./includes/pager.php');
         </div>
         
       <div class="w970 page pb20 pt15 pr"> 
-        <?php echo $page->show(2);?>
+        <?php echo $navpage->show(2);?>
          </div>
         
         </div>
