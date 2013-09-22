@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 define('IN_SK',true);
 require_once('../includes/init.php');
 ?>
